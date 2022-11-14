@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style>
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li b {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li c {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+#myUL li b:hover:not(.header) {
+  background-color: #eee;
+}
+
+#myUL li c:hover:not(.header) {
+  background-color: #eee;
+}
+
+
+
+
+        .dropbtn {
+          background-color: #04AA6D;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        .dropbtn:hover, .dropbtn:focus {
+          background-color: #3e8e41;
+        }
+        
+        #myInput {
+          box-sizing: border-box;
+          background-image: url('searchicon.png');
+          background-position: 14px 12px;
+          background-repeat: no-repeat;
+          font-size: 16px;
+          padding: 14px 20px 12px 45px;
+          border: none;
+          border-bottom: 1px solid #ddd;
+        }
+        
+        #myInput:focus {outline: 3px solid #ddd;}
+        
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f6f6f6;
+          min-width: 230px;
+          overflow: auto;
+          border: 1px solid #ddd;
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .dropdown-content b {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .dropdown-content c {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropdown a:hover {background-color: #ddd;}
+        .dropdown b:hover {background-color: #ddd;}
+        .dropdown c:hover {background-color: #ddd;}
+        
+        .show {display: block;}
+        </style>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Je propose - ESPRIT-TROC</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <main class="flex-shrink-0">
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html">ESPRIT-TROC</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        
+                        <li class="nav-item"><a class="nav-link" href="jepropose.html">Je propose</a></li>
+                        <li class="nav-item"><a class="nav-link" href="jerecherche.html">Je recherche</a></li>
+                        <li class="nav-item"><a class="nav-link" href="moncompte.html">Mon compte</a></li>
+                        <li class="nav-item"><a class="nav-link" href="forum.html">Forum</a></li>
+                        <li class="nav-item"><a class="nav-link" href="commentcamarche.html">Comment ça marche?</a></li>
+
+                        <li class="nav-item dropdown">
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <body class="d-flex flex-column">
+        <br>
+        <br>
+        <!--rechercher...-->
+        <input type="text" id="myInput" onkeyup="myFunction()" onkeyup="myFunction1()" onkeyup="myFunction2()" onkeyup="myFunction3()"placeholder="Entrer votre recherche....." title="Type in a name">
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a,b,c, i, txtValue;
+                input = document.getElementById("myInput1");
+                input = document.getElementById("myInput2");
+                input = document.getElementById("myInput3");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("categorie");
+                ul = document.getElementById("region");
+                ul = document.getElementById("etat");
+                li = ul.getElementsByTagName("a");
+                li = ul.getElementsByTagName("b");
+                li = ul.getElementsByTagName("c");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    b = li[i].getElementsByTagName("b")[0];
+                    c = li[i].getElementsByTagName("c")[0];
+                    txtValue = a.textContent || a.innerText;
+                    txtValue = b.textContent || b.innerText;
+                    txtValue = c.textContent || c.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+            </script>
+
+
+        <!--categoris-->
+        <h2>Choisissez une catégorie</h2>
+        <div class="categorie">
+        <button onclick="myFunction1()" class="dropbtn">Rechercher</button>
+        <div id="categorie" class="dropdown-content">
+    
+        <a href="#base">Etudes</a>
+        <a href="#blog">Maison</a>
+        <a href="#contact">Livres</a>
+        <a href="#custom">Mode</a>
+    
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction1() {
+  document.getElementById("categorie").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput1");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("categorie");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+<h2>Choisissez une gouvernorats</h2>
+
+<div class="region">
+  <button onclick="myFunction2()" class="dropbtn">Rechercher</button>
+  <div id="region" class="dropdown-content">
+    
+    <a href="#">Ariana</a>
+    <a href="#blog">Béja</a>
+    <a href="#contact">Ben Arous</a>
+    <a href="#custom">Bizerte</a>
+    <a href="#custom">Gabès</a>
+    <a href="#custom">Gafsa</a>
+    <a href="#custom">Jendouba</a>
+    <a href="#custom">Kairouane</a>
+    <a href="#custom">Kasserien</a>
+    <a href="#custom">Kébili</a>
+    <a href="#custom">Kef</a>
+    <a href="#custom">Mahdia</a>
+    <a href="#custom">Manouba</a>
+    <a href="#custom">Médenine</a>
+    <a href="#custom">Monastir</a>
+    <a href="#custom">Nabeul</a>
+    <a href="#custom">Sfax</a>
+    <a href="#custom">Sfax</a>
+    <a href="#custom">Sidi Bouzid</a>
+    <a href="#custom">Siliana</a>
+    <a href="#custom">Sousse</a>
+    <a href="#custom">Tataouine</a>
+    <a href="#custom">Tozeur</a>
+    <a href="#custom">Tunis</a>
+    <a href="#custom">Zaghouane</a>
+    
+    
+    
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction2() {
+  document.getElementById("region").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("region");
+  b = div.getElementsByTagName("b");
+  for (i = 0; i < b.length; i++) {
+    txtValue = b[i].textContent || b[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      b[i].style.display = "";
+    } else {
+      b[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+<!--etat-->
+<h2>Choisissez l'état</h2>
+
+<div class="dropdown">
+  <button onclick="myFunction3()" class="dropbtn">Rechercher</button>
+  <div id="etat" class="dropdown-content">
+    
+    <a href="#">Neuf</a>
+    <a href="#blog">Occasion</a>
+    
+    
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction3() {
+  document.getElementById("etat").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput3");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("etat");
+  c = div.getElementsByTagName("c");
+  for (i = 0; i < c.length; i++) {
+    txtValue = c[i].textContent || c[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      c[i].style.display = "";
+    } else {
+      c[i].style.display = "none";
+    }
+  }
+}
+</script>
+        
+            <!-- Header-->
+            
+            <!-- About section one-->
+            <section class="py-5 bg-light" id="scroll-target">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"><img alt="image" src="logo.PNG" width="300" height="300"></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">ESPRIT-TROC</h2>
+                            <p class="lead fw-normal text-muted mb-0">est un site web qui aide les étudiants de différents niveaux de troquer entre eux.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About section two-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <!--<div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Growth &amp; beyond</h2>
+                            <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam expedita, maiores eaque quisquam.</p>-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Team members section-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">Our team</h2>
+                        <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
+                    </div>
+                    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Yousra Chaïeb</h5>
+                                <div class="fst-italic text-muted">Founder &amp; CEO</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Yosser Dridi</h5>
+                                <div class="fst-italic text-muted">CFO</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-sm-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Mohamed Farouk BelHadj Amor</h5>
+                                <div class="fst-italic text-muted">Operations Manager</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                                <h5 class="fw-bolder">Rayene Ksousi</h5>
+                                <div class="fst-italic text-muted">CTO</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; ESPRIT-TROC 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Nous suivre</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
